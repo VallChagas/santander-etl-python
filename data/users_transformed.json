@@ -1,0 +1,53 @@
+[
+    {
+        "id": 4,
+        "name": "Ana Silva",
+        "account": {
+            "number": "0001-0",
+            "agency": "0001",
+            "balance": 1500.0,
+            "limit": 500.0
+        },
+        "card": {
+            "number": "**** **** **** 1234",
+            "limit": 1000.0
+        },
+        "features": [],
+        "news": [],
+        "message": "Olá, Ana Silva! Estamos felizes em ter você conosco."
+    },
+    {
+        "id": 5,
+        "name": "Bruno Costa",
+        "account": {
+            "number": "0002-0",
+            "agency": "0001",
+            "balance": 2300.0,
+            "limit": 800.0
+        },
+        "card": {
+            "number": "**** **** **** 5678",
+            "limit": 1500.0
+        },
+        "features": [],
+        "news": [],
+        "message": "Olá, Bruno Costa! Estamos felizes em ter você conosco."
+    },
+    {
+        "id": 6,
+        "name": "Carla Oliveira",
+        "account": {
+            "number": "0003-0",
+            "agency": "0001",
+            "balance": 3200.0,
+            "limit": 1200.0
+        },
+        "card": {
+            "number": "**** **** **** 9012",
+            "limit": 2000.0
+        },
+        "features": [],
+        "news": [],
+        "message": "Olá, Carla Oliveira! Estamos felizes em ter você conosco."
+    }
+]
