@@ -4,6 +4,8 @@ Projeto de estudo que demonstra um fluxo ETL (Extract, Transform, Load) em Pytho
 
 > Os dados deste repositório são fictícios. A API original da Santander Dev Week está indisponível; para executar a extração, o projeto espera uma API local simulada pelo Mockoon.
 
+> **Live**: https://vallchagas.github.io/santander-etl-python/
+
 ## Índice
 
 - [Fluxo do pipeline](#fluxo-do-pipeline)
