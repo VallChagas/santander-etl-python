@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0a0e14">
+    <meta name="description" content="A Python ETL pipeline that extracts sample users, transforms their data, and loads the results as JSON.">
+    <title>Santander ETL — Data pipeline, clearly defined</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="Santander ETL home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>Santander<span class="brand-divider">.</span>ETL</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
+          <a href="#overview">Overview</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#demo">Demo</a>
+          <a class="nav-github" href="https://github.com/VallChagas/santander-etl-python.git" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="overview" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <div class="context-badge" data-reveal>
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span>Personal project <span class="badge-separator">/</span> Santander Dev Week data</span>
+          </div>
+
+          <h1 id="hero-title" data-reveal>
+            A clear path from<br>
+            <span class="gradient-text">raw data to value.</span>
+          </h1>
+          <p class="hero-description" data-reveal>
+            A Python ETL pipeline that turns sample banking users into personalized, structured output.
+            Three focused stages. One repeatable workflow.
+          </p>
+
+          <div class="hero-actions" data-reveal>
+            <a class="button button-primary" href="#demo">Try the demo <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="https://github.com/VallChagas/santander-etl-python.git" target="_blank" rel="noopener noreferrer">Source code <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <div class="hero-stats" aria-label="Project at a glance" data-reveal>
+            <div class="stat">
+              <span class="stat-value">03</span>
+              <span class="stat-label">Pipeline stages</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">01</span>
+              <span class="stat-label">Repeatable workflow</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">JSON</span>
+              <span class="stat-label">Structured output</span>
+            </div>
+          </div>
+
+          <div class="hero-scroll" aria-hidden="true"><span></span>SCROLL TO EXPLORE</div>
+        </div>
+      </section>
+
+      <section class="section problem-section" aria-labelledby="problem-title">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">// The problem</p>
+            <h2 id="problem-title">Data needs a dependable route.</h2>
+          </div>
+          <div class="problem-grid">
+            <p data-reveal>Raw records are only a starting point. To make them useful, a workflow needs to gather the right users, enrich their information, and save the result in a format other tools can read.</p>
+            <p data-reveal>This project keeps those responsibilities distinct. Python reads user IDs from a CSV, retrieves sample records from a simulated API, and transforms each record with a personalized message.</p>
+            <p class="problem-summary" data-reveal>The transformed users are written to a JSON file, making each step easy to follow, run again, and extend. The website demo mirrors that flow locally in your browser; it does not connect to the project's API.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section architecture-section" id="architecture" aria-labelledby="architecture-title">
+        <div class="container">
+          <div class="section-heading section-heading-row" data-reveal>
+            <div>
+              <p class="eyebrow">// Architecture</p>
+              <h2 id="architecture-title">Three stages. One pipeline.</h2>
+            </div>
+            <p class="section-intro">Each stage has one clear responsibility, from the first user ID to the final JSON file.</p>
+          </div>
+
+          <div class="pipeline" data-reveal>
+            <article class="pipeline-card extract-card">
+              <header class="card-header">
+                <span class="stage-tag">01 <span aria-hidden="true">/</span> INPUT</span>
+                <span class="stage-indicator" aria-hidden="true"></span>
+              </header>
+              <h3>Extract</h3>
+              <p>Read user IDs from the CSV and fetch each record from the simulated API.</p>
+              <div class="code-panel" aria-label="Extract stage code example">
+                <span class="code-comment"># src/extract.py</span>
+                <code>user_ids = read_user_ids()<br>users = [<br>&nbsp;&nbsp;extract_user(uid)<br>&nbsp;&nbsp;for uid in user_ids<br>]</code>
+              </div>
+              <footer class="card-footer"><span>CSV + API</span><span>HTTP / JSON</span></footer>
+            </article>
+
+            <div class="flow-arrow" aria-hidden="true">
+              <svg viewBox="0 0 48 16" fill="none"><path d="M1 8h44m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+
+            <article class="pipeline-card transform-card">
+              <header class="card-header">
+                <span class="stage-tag">02 <span aria-hidden="true">/</span> PROCESS</span>
+                <span class="stage-indicator" aria-hidden="true"></span>
+              </header>
+              <h3>Transform</h3>
+              <p>Add a personalized message to every user while keeping the workflow easy to read.</p>
+              <div class="code-panel" aria-label="Transform stage code example">
+                <span class="code-comment"># src/transform.py</span>
+                <code>user["message"] = (<br>&nbsp;&nbsp;f"Hello, {name}!"<br>&nbsp;&nbsp;" Glad you're here."<br>)<br>return user</code>
+              </div>
+              <footer class="card-footer"><span>Per-user mapping</span><span>Python</span></footer>
+            </article>
+
+            <div class="flow-arrow" aria-hidden="true">
+              <svg viewBox="0 0 48 16" fill="none"><path d="M1 8h44m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+
+            <article class="pipeline-card load-card">
+              <header class="card-header">
+                <span class="stage-tag">03 <span aria-hidden="true">/</span> OUTPUT</span>
+                <span class="stage-indicator" aria-hidden="true"></span>
+              </header>
+              <h3>Load</h3>
+              <p>Serialize the transformed records and save them as a readable JSON output file.</p>
+              <div class="code-panel" aria-label="Load stage output example">
+                <span class="code-comment"># data/users_transformed.json</span>
+                <code>{<br>&nbsp;&nbsp;"id": 4,<br>&nbsp;&nbsp;"name": "Sample User",<br>&nbsp;&nbsp;"message": "Hello!"<br>}</code>
+              </div>
+              <footer class="card-footer"><span>JSON file</span><span>UTF-8</span></footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section demo-section" id="demo" aria-labelledby="demo-title">
+        <div class="container">
+          <div class="section-heading section-heading-row" data-reveal>
+            <div>
+              <p class="eyebrow">// Browser demo</p>
+              <h2 id="demo-title">Run the pipeline.</h2>
+            </div>
+            <p class="section-intro">A small, self-contained preview of the transform flow. No API or server required.</p>
+          </div>
+
+          <div class="demo-panel" data-reveal>
+            <div class="demo-toolbar">
+              <div class="demo-file"><span class="file-icon" aria-hidden="true">{ }</span><span>pipeline.preview</span></div>
+              <div class="demo-controls">
+                <label class="visually-hidden" for="demo-scenario">Select a demo dataset</label>
+                <select id="demo-scenario">
+                  <option value="three">3 sample users</option>
+                  <option value="one">1 sample user</option>
+                  <option value="empty">Empty dataset (error demo)</option>
+                </select>
+                <button class="button button-run" id="run-demo" type="button">Run <span aria-hidden="true">→</span></button>
+              </div>
+            </div>
+
+            <div class="terminal">
+              <div class="terminal-header">
+                <div class="terminal-lights" aria-hidden="true"><span></span><span></span><span></span></div>
+                <span>OUTPUT</span>
+                <span class="status-badge status-idle" id="demo-status" role="status" aria-live="polite"><span></span>idle</span>
+              </div>
+              <pre class="terminal-output" id="demo-output" tabindex="0" aria-label="Pipeline demo output">Select a sample dataset and run the pipeline to see the output.</pre>
+            </div>
+            <p class="demo-note">Illustrative browser-side sample data. The original Python project uses a CSV and a locally hosted mock API.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section source-section" id="source" aria-labelledby="source-title">
+        <div class="container">
+          <div class="source-card" data-reveal>
+            <div class="source-copy">
+              <p class="eyebrow">// Source</p>
+              <h2 id="source-title">Want to see the real pipeline?</h2>
+              <p>Explore the Python source, sample data, and project setup on GitHub. The repository is the source of truth for the ETL implementation.</p>
+            </div>
+            <a class="button button-primary source-button" href="https://github.com/VallChagas/santander-etl-python.git" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+            <span class="source-decoration" aria-hidden="true">.py</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand footer-brand" href="#top" aria-label="Santander ETL home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>Santander<span class="brand-divider">.</span>ETL</span>
+        </a>
+        <p class="footer-credit">Built with Python, curiosity, and a clear pipeline.</p>
+        <p class="footer-meta">PORTFOLIO PROJECT <span aria-hidden="true">/</span> 2026</p>
+      </div>
+    </footer>
+  </body>
+</html>
