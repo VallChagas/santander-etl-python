@@ -158,7 +158,7 @@ O arquivo `data/SDW2023.csv` usa codificação UTF-16. Os registros do projeto s
 
 O site de portfólio está disponível em `index.html` e pode ser publicado no GitHub Pages. Ele inclui uma demonstração interativa executada no próprio navegador com dados de exemplo; essa demonstração é independente do pipeline Python e da API local.
 
-Antes de publicar, substitua `SEU-USUARIO/SEU-REPO` pelos dados do repositório nos links para o GitHub em `index.html`.
+Antes de publicar, substitua `https://vallchagas.github.io/santander-etl-python/` pelos dados do repositório nos links para o GitHub em `index.html`.
 
 ## Teste opcional com OpenAI
 
